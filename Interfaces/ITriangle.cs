@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace TriangleTask
 {
-    interface ITriangle 
+    interface ITriangle : ICloneable
     {
         string Name { get; }
 
         double Square { get; }
-
-        ITriangle Clone();
     }
 }

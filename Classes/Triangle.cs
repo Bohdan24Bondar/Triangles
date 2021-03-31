@@ -61,7 +61,7 @@ namespace TriangleTask
             return string.Format("[{0}] : {1}", _name, Square);
         }
 
-        public ITriangle Clone()
+        public object Clone()
         {
             return (ITriangle)MemberwiseClone();
         }

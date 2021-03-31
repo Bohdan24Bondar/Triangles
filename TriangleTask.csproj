@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITriangle.cs" />
+    <Compile Include="Interfaces\ITriangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TriangleOperator.cs" />
-    <Compile Include="Triangle.cs" />
+    <Compile Include="Classes\TriangleOperator.cs" />
+    <Compile Include="Classes\Triangle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

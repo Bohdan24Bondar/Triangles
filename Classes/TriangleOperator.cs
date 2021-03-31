@@ -22,7 +22,7 @@ namespace TriangleTask
 
             foreach (var t in sortedTriangles)
             {
-                yield return t.Clone();
+                yield return t.Clone() as ITriangle;
             }
         }
 
