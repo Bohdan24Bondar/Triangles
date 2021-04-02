@@ -8,25 +8,20 @@ namespace TriangleTask
 {
     class TriangleOperator
     {
-        private List<ITriangle> _plentyTriangles;
+        private List<IFigure> _plentyTriangles;
 
         public TriangleOperator()
         {
-            _plentyTriangles = new List<ITriangle>();
+            _plentyTriangles = new List<IFigure>();
         }
 
-        public IEnumerable<ITriangle> SortTriagleByDissending()
+        public IEnumerable<IFigure> SortTriagleByDissending()
         {
-            var sortedTriangles = _plentyTriangles
+            return _plentyTriangles
                     .OrderByDescending(t => t.Square);
-
-            foreach (var t in sortedTriangles)
-            {
-                yield return t.Clone() as ITriangle;
-            }
         }
 
-        public void AddTriangle(ITriangle triangle)
+        public void AddTriangle(IFigure triangle)
         {
             if (triangle == null)
             {

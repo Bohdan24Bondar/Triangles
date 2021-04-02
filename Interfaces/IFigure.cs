@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TriangleTask
 {
-    interface ITriangle : ICloneable
+    interface IFigure
     {
         string Name { get; }
 

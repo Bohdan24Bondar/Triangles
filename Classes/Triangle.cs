@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TriangleTask
 {
-    class Triangle : ITriangle
+    class Triangle : IFigure
     {
         const double DEVIDER = 2.0;
 
@@ -59,11 +59,6 @@ namespace TriangleTask
         public override string ToString()
         {
             return string.Format("[{0}] : {1}", _name, Square);
-        }
-
-        public object Clone()
-        {
-            return (ITriangle)MemberwiseClone();
         }
 
         public static Triangle Create(string name, double firstSide, 
