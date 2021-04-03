@@ -6,17 +6,22 @@ using System.Threading.Tasks;
 
 namespace TriangleTask
 {
-    class TriangleOperator
+    class TrianglesOperator
     {
         private List<IFigure> _plentyTriangles;
 
-        public TriangleOperator()
+        public TrianglesOperator()
         {
             _plentyTriangles = new List<IFigure>();
         }
 
         public IEnumerable<IFigure> SortTriagleByDissending()
         {
+            if (_plentyTriangles == null)
+            {
+                throw new ArgumentNullException("There are no one triangles!");
+            }
+
             return _plentyTriangles
                     .OrderByDescending(t => t.Square);
         }
@@ -30,6 +35,5 @@ namespace TriangleTask
 
             _plentyTriangles.Add(triangle);
         }
-
     }
 }

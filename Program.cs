@@ -10,26 +10,26 @@ namespace TriangleTask
 {
     class Program
     {
-        static Random random = new Random();
+        #region Instruction
+
+        public const string INSTRUCTION = "Please, input name of triagle with " +
+                "common name <Triangle> than add three sides of triangle where " +
+                "separetor will be coma <,> also sum of size two sides must be more" +
+                "than size of third side \nFor example:\n Trianle 2, 44.6, 22.7, 33.03";
+
+        #endregion
+
         static void Main(string[] args)
         {
-            Triangle t1 = new Triangle("t1", 13, 44, 23);
-            Triangle t2 = new Triangle("t2", 12, 3, 8);
-            Triangle t3 = new Triangle("t3", 166, 36, 8);
-
-            double n = t1.Square;
-
-            TriangleOperator op = new TriangleOperator();
-
-            op.AddTriangle(t1);
-            op.AddTriangle(t2);
-            op.AddTriangle(t3);
-
-            var result = op.SortTriagleByDissending();
-
-            foreach (var t in result)
+            try
             {
-                Console.WriteLine(t.ToString());
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+                ConsoleController application = new ConsoleController(INSTRUCTION);
+                application.Run();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine(INSTRUCTION);
             }
 
             Console.ReadKey();

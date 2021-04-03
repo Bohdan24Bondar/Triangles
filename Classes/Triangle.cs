@@ -60,31 +60,5 @@ namespace TriangleTask
         {
             return string.Format("[{0}] : {1}", _name, Square);
         }
-
-        public static Triangle Create(string name, double firstSide, 
-                double secondSide, double thirdSide)
-        {
-            if (firstSide < 0)
-            {
-                throw new ArgumentException("Length of first side less than 0");
-            }
-
-            if (secondSide < 0)
-            {
-                throw new ArgumentException("Length of second side side less than 0");
-            }
-
-            if (thirdSide < 0)
-            {
-                throw new ArgumentException("Length of third side side less than 0");
-            }
-
-            if ((name == null) && (name.Contains("Triangle")))
-            {
-                throw new ArgumentException("Wrong value of name");
-            }
-
-            return new Triangle(name, firstSide, secondSide, thirdSide);
-        }
     }
 }

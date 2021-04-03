@@ -7,29 +7,17 @@ using System.Threading.Tasks;
 namespace TriangleTask
 {
     class TriangleValidator
-    {
-
-        #region Private
-
-        private string _commonName;
-
-        #endregion
-
-        public TriangleValidator(string commonName)
+    {  
+        public bool IsTriangle(double firstSide, double secondSide, double thirdSide)
         {
-            _commonName = commonName;
-        }    
-
-        public bool IsTriangle(int firstSide, int secondSide, int thirdSide)
-        {
-            return ((firstSide + secondSide) < thirdSide)
-                    || ((firstSide + thirdSide) < secondSide)
-                    || ((secondSide + thirdSide) < firstSide);
+            return ((firstSide + secondSide) > thirdSide)
+                    && ((firstSide + thirdSide) > secondSide)
+                    && ((secondSide + thirdSide) > firstSide);
         }
 
-        public bool IsRightName(string name)
+        public bool IsRightName(string name, string commonName)
         {
-            return name.Contains(_commonName);
+            return name.Contains(commonName);
         }
     }
 }

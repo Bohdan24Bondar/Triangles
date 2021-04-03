@@ -9,35 +9,30 @@ namespace TriangleTask
     class ValidatorController
     {
         private TriangleValidator _triangleChecker;
-        private ParametersValidator _parametersChecker;
-        private string _figureName;
-        private int _countOfSide;
+        private string _commonName;
 
-        public ValidatorController(TriangleValidator triangleChecker, 
-                ParametersValidator parametersChecker, string triangleName,
-                int countOfSide)
+        public ValidatorController(string commonName)
         {
-            _triangleChecker = triangleChecker;
-            _parametersChecker = parametersChecker;
-            _figureName = triangleName;
-            _countOfSide = countOfSide;
+            _triangleChecker = new TriangleValidator();
+            _commonName = commonName;
         }
 
-        public void StartValidation()
+        public void StartValidation(string name, params double[] sides)//todo separate into firstSide, second ,third...
         {
-            int[] sides = new int[_countOfSide];
+            bool isTriangle = _triangleChecker.IsTriangle(sides[0], sides[1], sides[2]);
 
-            if (_triangleChecker.IsRightName(_figureName))
+            if (!isTriangle)
             {
-                throw new ArgumentException($"Wrong triangle name!" +
-                    $"\n Has to contain {_figureName}");  //TODO Exeption
+                throw new ArgumentException("Can't build triangle from these sides!\n" +
+                        "Summ of two side triangle should be more than third side");
             }
 
-            if (!_triangleChecker.IsTriangle(sides[0], sides[1], sides[2]))
-            {
-                throw new ArgumentException("Figure is not treiangle"); //TODO Exeption
-            }
+            bool isRightName = _triangleChecker.IsRightName(name, _commonName);
 
+            if (!isRightName)
+            {
+                throw new ArgumentException($"Name of triangle, should contains {_commonName} in name");
+            }
         }
     }
 }

@@ -44,12 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\TriangleValidator.cs" />
+    <Compile Include="Classes\ConsoleController.cs" />
+    <Compile Include="Classes\ContinueChecker.cs" />
     <Compile Include="Interfaces\IFigure.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Classes\TriangleOperator.cs" />
+    <Compile Include="Classes\TrianglesOperator.cs" />
     <Compile Include="Classes\Triangle.cs" />
-    <Compile Include="Classes\ParametersValidator.cs" />
+    <Compile Include="Classes\NumbericConvertor.cs" />
     <Compile Include="Classes\ValidatorController.cs" />
     <Compile Include="Classes\Viewer.cs" />
   </ItemGroup>
