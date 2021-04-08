@@ -49,7 +49,7 @@
     <Compile Include="Interfaces\IFigure.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Classes\TrianglesOperator.cs" />
+    <Compile Include="Classes\FigureContainer.cs" />
     <Compile Include="Classes\Triangle.cs" />
     <Compile Include="Classes\NumbericConvertor.cs" />
     <Compile Include="Classes\ValidatorController.cs" />
@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

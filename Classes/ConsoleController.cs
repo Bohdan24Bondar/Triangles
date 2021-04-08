@@ -18,7 +18,7 @@ namespace TriangleTask
         #region Private
 
         private NumbericConvertor _sidesConvertor;
-        private TrianglesOperator _trianglesSorter;
+        private FigureContainer _trianglesSorter;
         private ValidatorController _parametersValidator;
         private Viewer _trianglesViwer;
         private ContinueChecker _currentCondition;
@@ -29,8 +29,8 @@ namespace TriangleTask
         public ConsoleController(string instruction)
         {
             _trianglesViwer = new Viewer("Please input parameters of triangle" +
-                   " as said in the instruction:"); //todo instruction 
-            _trianglesSorter = new TrianglesOperator();
+                   " as said in the instruction:", instruction); //todo instruction 
+            _trianglesSorter = new FigureContainer();
             _parametersValidator = new ValidatorController(COMMON_NAME);
             _currentCondition = new ContinueChecker(new string[] { "y", "yes" });//todo consts
             _insrtuction = instruction;

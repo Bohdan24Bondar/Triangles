@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace TriangleTask
 {
-    class TrianglesOperator
+    class FigureContainer
     {
-        private List<IFigure> _plentyTriangles;
+        private Queue<IFigure> _plentyTriangles;
 
-        public TrianglesOperator()
+        public FigureContainer()
         {
-            _plentyTriangles = new List<IFigure>();
+            _plentyTriangles = new Queue<IFigure>();
         }
 
         public IEnumerable<IFigure> SortTriagleByDissending()
@@ -33,7 +33,7 @@ namespace TriangleTask
                 throw new ArgumentNullException($"Argument {triangle} is null");
             }
 
-            _plentyTriangles.Add(triangle);
+            _plentyTriangles.Enqueue(triangle);
         }
     }
 }

@@ -21,18 +21,21 @@ namespace TriangleTask
         #region Private
 
         private string _startMessage;
+        private string _instruction;
 
         #endregion
 
-        public Viewer(string startMessage)
+        public Viewer(string startMessage, string instruction)
         {
             _startMessage = startMessage;
+            _instruction = instruction;
         }
 
         public string[] InputParameters() //TODO
         {
             bool isRightParameters;
             string parameters = string.Empty;
+
             do
             {
                 SetCursorPosition(_startMessage);
@@ -74,8 +77,9 @@ namespace TriangleTask
 
             foreach (var figure in sortedFigures)
             {
-                Console.Write(figure.ToString());
-                Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop++);
+                Console.WriteLine();
+                Console.WriteLine(figure.ToString());
+                //Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop++);
             }
         }
 

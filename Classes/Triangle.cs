@@ -8,11 +8,14 @@ namespace TriangleTask
 {
     class Triangle : IFigure
     {
+        #region Consts
+
         const double DEVIDER = 2.0;
+
+        #endregion
 
         #region Private
 
-        private string _name;
         private double _firstSide;
         private double _secondSide;
         private double _thirdSide;
@@ -22,19 +25,13 @@ namespace TriangleTask
         public Triangle(string name, double firstSide, double secondSide, 
                 double thirdSide)
         {
-            _name = name;
+            Name = name;
             _firstSide = firstSide;
             _secondSide = secondSide;
             _thirdSide = thirdSide;
         }
 
-        public string Name 
-        { 
-            get
-            {
-                return _name;
-            }
-        }
+        public string Name { get; private set; }
 
         public double Square 
         {
@@ -58,7 +55,7 @@ namespace TriangleTask
 
         public override string ToString()
         {
-            return string.Format("[{0}] : {1}", _name, Square);
+            return string.Format("[{0}] : {1}", Name, Square);
         }
     }
 }
