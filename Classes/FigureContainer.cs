@@ -15,7 +15,7 @@ namespace TriangleTask
             _plentyTriangles = new Queue<IFigure>();
         }
 
-        public IEnumerable<IFigure> SortTriagleByDissending()
+        public IEnumerable<IFigure> SortFiguresByDissending()
         {
             if (_plentyTriangles == null)
             {

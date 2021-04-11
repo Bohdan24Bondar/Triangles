@@ -63,7 +63,7 @@ namespace TriangleTask
 
                     } while (canContinue);
 
-                    var result = _trianglesSorter.SortTriagleByDissending();
+                    var result = _trianglesSorter.SortFiguresByDissending();
                     _trianglesViwer.ShowFigures(result);
                 }
                 catch (FormatException ex)
