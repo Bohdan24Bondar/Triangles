@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+using FigureLibrary;
+
 namespace TriangleTask
 {
     class Program
@@ -21,16 +23,28 @@ namespace TriangleTask
 
         static void Main(string[] args)
         {
-            try
-            {
-                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-                ConsoleController application = new ConsoleController(INSTRUCTION);
-                application.Run();
-            }
-            catch (Exception)
-            {
-                Console.WriteLine(INSTRUCTION);
-            }
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+
+            FiguresContainerFactory containerCreator = new FiguresContainerFactory();
+            IFigureContainer trianglesContainer = containerCreator.Create();
+
+            TriangleValidatorFactory validatorCreator = new TriangleValidatorFactory();
+            IFigureValidator triangleChecker =  validatorCreator.Create();
+
+
+            TriangleFactory triangleBuilder = new TriangleFactory();
+            
+            FigureComparerBySquareFactory creator = new FigureComparerBySquareFactory();
+            IComparer<IFigure> triangleComparer = creator.Create();
+
+            IContinueChecker continueChecker = new ContinueChecker(new string[] { "y", "yes" });
+
+            INumbericsValidator numbersChecker = new NumbericsValidator();
+
+
+            ConsoleController application = new ConsoleController(INSTRUCTION, continueChecker, 
+                    numbersChecker, trianglesContainer, triangleChecker, triangleBuilder, triangleComparer);//todo consts
+            application.Run();
 
             Console.ReadKey();
         }
