@@ -1,147 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="FigureLibrary.ContinueChecker" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="3" Y="1.5" Width="1.5" />
+  <Class Name="FigureLibrary.ContinueChecker" BaseTypeListCollapsed="true">
+    <Position X="1.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Classes\ContinueChecker.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="FigureLibrary.FigureComparerBySquare" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.75" Y="1.75" Width="2" />
+  <Class Name="FigureLibrary.FigureComparerBySquare" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="7" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Classes\FigureComparerBySquare.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="FigureLibrary.FiguresContainer" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAACAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\FiguresContainer.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="FigureLibrary.FiguresSorterByDescending" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.25" Y="2.5" Width="2.5" />
+  <Class Name="FigureLibrary.FiguresSorterByDescending" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABACAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\FiguresSorterByDescending.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="FigureLibrary.NumbericsValidator" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5" Y="4.5" Width="1.75" />
+  <Class Name="FigureLibrary.NumbericsValidator" BaseTypeListCollapsed="true">
+    <Position X="3" Y="6.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\NumbericsValidator.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="FigureLibrary.Triangle" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="4.5" Width="1.5" />
+  <Class Name="FigureLibrary.Triangle" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAABAAAAAgAAAEAAAAAAQAAAgAAAAAAEAgAAAAAAA=</HashCode>
+      <HashCode>AAIAABAAAAAgAAAEAAAAAAQAAAgAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Classes\Triangle.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="FigureLibrary.TriangleValidator" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="3" Y="4.25" Width="1.5" />
+  <Class Name="FigureLibrary.TriangleValidator" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Classes\TriangleValidator.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="FigureLibrary.FigureComparerBySquareFactory" Collapsed="true">
-    <Position X="5.5" Y="0.75" Width="2.25" />
+  <Class Name="FigureLibrary.FigureComparerBySquareFactory">
+    <Position X="9.25" Y="5.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Factories\FigureComparerBySquareFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FigureLibrary.FigureFactory" Collapsed="true">
-    <Position X="0.5" Y="1.25" Width="1.5" />
+  <Class Name="FigureLibrary.FigureFactory">
+    <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Factories\FigureFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FigureLibrary.FiguresContainerFactory" Collapsed="true">
-    <Position X="6.5" Y="3.5" Width="2" />
+  <Class Name="FigureLibrary.FiguresSorterByDescendingFactory">
+    <Position X="6.25" Y="7" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
-      <FileName>Factories\FiguresContainerFactory.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="FigureLibrary.FiguresSorterByDescendingFactory" Collapsed="true">
-    <Position X="8.25" Y="1.5" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAABACAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Factories\FiguresSorterByDescendingFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FigureLibrary.TriangleFactory" Collapsed="true">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+  <Class Name="FigureLibrary.TriangleFactory">
+    <Position X="7" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Factories\TriangleFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FigureLibrary.TriangleValidatorFactory" Collapsed="true">
-    <Position X="3" Y="2.75" Width="1.75" />
+  <Class Name="FigureLibrary.TriangleValidatorFactory">
+    <Position X="4.25" Y="3.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Factories\TriangleValidatorFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FigureLibrary.DefaultSettings" Collapsed="true">
-    <Position X="12.5" Y="0.75" Width="1.5" />
+  <Class Name="FigureLibrary.DefaultSettings">
+    <Position X="11.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAABAAAAA=</HashCode>
-      <FileName>DefaultSettings.cs</FileName>
+      <HashCode>CCAAAAAAAAAAAACAAAAACAAAAIAAAACAAEgAABAAAAA=</HashCode>
+      <FileName>Classes\DefaultSettings.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="FigureLibrary.INumbericsValidator" Collapsed="true">
-    <Position X="4.75" Y="3.5" Width="1.5" />
+  <Interface Name="FigureLibrary.INumbericsValidator">
+    <Position X="3" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\INumbericsValidator.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="FigureLibrary.IFigureValidator" Collapsed="true">
-    <Position X="3" Y="3.5" Width="1.5" />
+  <Interface Name="FigureLibrary.IFigureValidator">
+    <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Interfaces\IFigureValidator.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="FigureLibrary.IFiguresSorter" Collapsed="true">
-    <Position X="8.75" Y="0.75" Width="1.5" />
+  <Interface Name="FigureLibrary.IFiguresSorter">
+    <Position X="7" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IFiguresSorter.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="FigureLibrary.IFigureContainer" Collapsed="true">
-    <Position X="7" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IFigureContainer.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="FigureLibrary.IFigure" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+  <Interface Name="FigureLibrary.IFigure">
+    <Position X="9.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Interfaces\IFigure.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="FigureLibrary.IContinueChecker" Collapsed="true">
-    <Position X="3" Y="0.75" Width="1.5" />
+  <Interface Name="FigureLibrary.IContinueChecker">
+    <Position X="1.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IContinueChecker.cs</FileName>
