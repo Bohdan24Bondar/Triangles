@@ -8,12 +8,6 @@ namespace FigureLibrary
 {
     internal class Triangle : IFigure
     {
-        #region Consts
-
-        const double DEVIDER = 2.0;
-
-        #endregion
-
         #region Private
 
         private double _firstSide;
@@ -49,7 +43,7 @@ namespace FigureLibrary
         {
             get
             {
-                return (_firstSide + _secondSide + _thirdSide) / DEVIDER;
+                return (_firstSide + _secondSide + _thirdSide) / DefaultSettings.DEVIDER;
             }
         }
 

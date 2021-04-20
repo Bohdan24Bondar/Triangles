@@ -42,17 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ContinueChecker.cs" />
+    <Compile Include="Classes\DefaultSettings.cs" />
     <Compile Include="Factories\FigureFactory.cs" />
     <Compile Include="Classes\FigureComparerBySquare.cs" />
     <Compile Include="Factories\FigureComparerBySquareFactory.cs" />
-    <Compile Include="Classes\FiguresContainer.cs" />
     <Compile Include="Classes\FiguresSorterByDescending.cs" />
     <Compile Include="Factories\FiguresSorterByDescendingFactory.cs" />
-    <Compile Include="Factories\FiguresContainerFactory.cs" />
     <Compile Include="Factories\TriangleValidatorFactory.cs" />
     <Compile Include="Interfaces\IContinueChecker.cs" />
     <Compile Include="Interfaces\IFigureValidator.cs" />
-    <Compile Include="Interfaces\IFigureContainer.cs" />
     <Compile Include="Interfaces\IFiguresSorter.cs" />
     <Compile Include="Interfaces\IFigure.cs" />
     <Compile Include="Classes\NumbericsValidator.cs" />
@@ -61,6 +59,9 @@
     <Compile Include="Classes\Triangle.cs" />
     <Compile Include="Factories\TriangleFactory.cs" />
     <Compile Include="Classes\TriangleValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

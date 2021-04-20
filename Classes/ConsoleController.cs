@@ -10,41 +10,34 @@ namespace TriangleTask
 {
     class ConsoleController
     {
-
-        #region Consts
-
-        public const string COMMON_NAME = "Triangle";
-
-        #endregion
-
         #region Private
 
         private string _insrtuction;
-        private Viewer _figuresViwer;
+        private IViewer _figuresViwer;
         private IContinueChecker _checker;
         private INumbericsValidator _numbericsCheker;
-        private IFigureContainer _figuresContainer;
         private IFigureValidator _figuresChecker;
         private FigureFactory _figureBuilder;
         private IComparer<IFigure> _figuresComparer;
+        private FiguresSorterByDescendingFactory _sorterFactory;
+        private Queue<IFigure> _figuresContainer;
 
         #endregion
 
         public ConsoleController(string instruction, IContinueChecker checkerProcess, 
-                INumbericsValidator numbericsCheker, IFigureContainer figuresContainer,
-                IFigureValidator figuresChecker, TriangleFactory figureBuilder, 
-                IComparer<IFigure> figuresComparer)
+                INumbericsValidator numbericsCheker, IFigureValidator figuresChecker, 
+                TriangleFactory figureBuilder, IComparer<IFigure> figuresComparer, 
+                FiguresSorterByDescendingFactory sorterFactory, IViewer figuresViwer)
         {
-            _figuresViwer = new Viewer("Please input parameters of triangle" +
-                   " as said in the instruction:", instruction); //todo instruction 
+            _insrtuction = instruction;
             _checker = checkerProcess;
             _numbericsCheker = numbericsCheker;
-            _figuresContainer = figuresContainer;
             _figuresChecker = figuresChecker;
             _figureBuilder = figureBuilder;
             _figuresComparer = figuresComparer;
-            _insrtuction = instruction;
-
+            _sorterFactory = sorterFactory;
+            _figuresViwer = figuresViwer;
+            _figuresContainer = new Queue<IFigure>();
         }
 
         public void Run()
@@ -52,53 +45,53 @@ namespace TriangleTask
             try
             {
                 bool canContinue = true;
-                string[] arguments;
+                _figuresViwer.ShowMessage(_insrtuction);
 
                 do
                 {
-                    arguments = _figuresViwer.InputParameters();
+                    string[] arguments = _figuresViwer.InputParameters();
 
                     if (!_numbericsCheker.IsNumber(arguments[1], arguments[2], arguments[3]))
                     {
+                        string message = string.Format("{0}\n{1}",
+                                DefaultSettings.WRONG_FORMAT_ARGS, _insrtuction);
+                        _figuresViwer.ShowMessage(message);
                         return;
                     }
 
-                    double[] sides = GetNumbers(arguments[1],
-                            arguments[2], arguments[3]);
+                    double[] sides = GetNumbers(arguments[1], arguments[2], arguments[3]);
 
-                    if (!_figuresChecker.HasRightSides(sides) 
-                            || !_figuresChecker.IsRightName(arguments[0], COMMON_NAME))
+                    if (!_figuresChecker.IsRightName(arguments[0], DefaultSettings.COMMON_NAME) 
+                            || !_figuresChecker.HasRightSides(sides))
                     {
+                        string message = string.Format("{0}\n{1}",
+                                DefaultSettings.WRONG_FIGURES_ARGS, _insrtuction);
+                        _figuresViwer.ShowMessage(message);
                         return;
                     }
 
-                    _figuresContainer.AddFigure(_figureBuilder.Create(arguments[0], sides));
-
-                    string answer = _figuresViwer.InputAnswer("Input answer <y> " +
-                        "or <yes> if you want to continue:");//todo
+                    _figuresContainer.Enqueue(_figureBuilder.Create(arguments[0], sides));
+                    string answer = _figuresViwer.InputAnswer(DefaultSettings.ANSWER_MESSAGE);
                     canContinue = _checker.CanContinue(answer);
 
                 } while (canContinue);
 
-                IFiguresSorter trianlgleSorter = GetFigureSorter(_figuresContainer.GetFigures(), 
+                if (_figuresContainer.Count == 0)
+                {
+                    _figuresViwer.ShowMessage(_insrtuction);
+                    return;
+                }
+
+                IFiguresSorter trianlgleSorter = _sorterFactory.Create(_figuresContainer,
                         _figuresComparer);
-                var result = trianlgleSorter.SortFigures();
-                _figuresViwer.ShowFigures(result);
+                IEnumerable<IFigure> figures = trianlgleSorter.SortFigures();
+                _figuresViwer.ShowFigures(figures);
             }
-            catch (FormatException ex)
+            catch(NullReferenceException ex)
             {
-                _figuresViwer.ShowMessage(ex.Message);
-                _figuresViwer.ShowMessage(_insrtuction); // todo
+                string message = string.Format("{0}\n{1}",ex.Message, _insrtuction);
+                _figuresViwer.ShowMessage(message);
             }
-        }
-
-        private IFiguresSorter GetFigureSorter(IEnumerable<IFigure> plentyFigures, 
-                IComparer<IFigure> figuresComparer)
-        {
-            FiguresSorterByDescendingFactory creator = new FiguresSorterByDescendingFactory(plentyFigures, 
-                    figuresComparer);
-
-            return creator.Create();
         }
 
         private double [] GetNumbers(params string[] sides)

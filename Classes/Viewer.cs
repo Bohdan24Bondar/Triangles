@@ -9,43 +9,43 @@ using System.Threading.Tasks;
 
 namespace TriangleTask
 {
-    class Viewer
+    class Viewer : IViewer
     {
         #region Consts
 
         public const int DIVIDER = 2;
-        public char SEPARATOR = ',';
-        public int COUNT_OF_SEPARATE = 4;
+        public const char SEPARATOR = ',';
+        public const char LINES_SEPARATOR = '\n';
+        public const int COUNT_OF_SEPARATE = 4;
+        public const string FIGURE_START_MESSAGE = "Triangles list:";
 
         #endregion
 
         #region Private
 
         private string _startMessage;
-        private string _instruction;
 
         #endregion
 
-        public Viewer(string startMessage, string instruction)
+        public Viewer(string startMessage)
         {
             _startMessage = startMessage;
-            _instruction = instruction;
         }
 
-        public string[] InputParameters() //TODO
+        public string[] InputParameters() 
         {
             bool isRightParameters;
             string parameters = string.Empty;
 
             do
             {
-                SetCursorPosition(_startMessage);
+                PrintMessage(_startMessage);
                 parameters = Console.ReadLine();
                 isRightParameters = IsRightParameters(parameters);
 
             } while (!isRightParameters);
 
-            return parameters.Split(new char[] { SEPARATOR });
+            return SepareteParametrs(parameters);
         }
 
         private bool IsRightParameters(string parameters)
@@ -60,40 +60,59 @@ namespace TriangleTask
             return true;
         }
 
-        public string InputAnswer(string message)//todo out
+        private string[] SepareteParametrs(string parameters)
         {
-            SetCursorPosition(message);
+            string[] triangleArgs = parameters.Split(new char[] { SEPARATOR });
+
+            for (int index = 0; index < triangleArgs.Length; index++)
+            {
+                triangleArgs[index] = triangleArgs[index].Trim();
+            }
+
+            return triangleArgs;
+        }
+
+        public string InputAnswer(string message)
+        {
+            PrintMessage(message);
 
             return Console.ReadLine();
         }
 
         public void ShowMessage(string message)
         {
-            SetCursorPosition(message);
+            PrintMessage(message);
+            Console.SetCursorPosition(Console.CursorLeft, ++Console.CursorTop);
+            Console.Write("Please, press any key");
+            Console.ReadKey();
         }
 
         public void ShowFigures(IEnumerable<IFigure> sortedFigures)
         {
-            SetCursorPosition("Triangle list:"); // todo as args string
+            PrintMessage(FIGURE_START_MESSAGE);
 
             foreach (var figure in sortedFigures)
             {
                 Console.WriteLine();
                 Console.WriteLine(figure.ToString());
-                //Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop++);
             }
         }
 
-        private void SetCursorPosition(string message)
+        private void PrintMessage(string message)
         {
-            int middleHeight = (Console.WindowHeight - 1) / DIVIDER;
-            int middleWidth = (Console.WindowWidth - message.Length) / DIVIDER;
-
             Console.Clear();
-            Console.SetCursorPosition(middleWidth, middleHeight++);
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write(message);
-            Console.SetCursorPosition(middleWidth, middleHeight);
+            string[] lines = message.Split(new char[] { LINES_SEPARATOR });
+            int middleHeight = (Console.WindowHeight - lines.Length) / DIVIDER;
+            int middleWidth = (Console.WindowWidth - lines[0].Length) / DIVIDER;
+            
+            for (int i = 0; i < lines.Length; i++)
+            {
+                Console.SetCursorPosition(middleWidth, middleHeight++);
+                Console.Write(lines[i]);
+            }
+
+            Console.SetCursorPosition(middleWidth, middleHeight++);
             Console.ForegroundColor = ConsoleColor.Green;
         }
     }
